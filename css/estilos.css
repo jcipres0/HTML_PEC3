@@ -1,0 +1,677 @@
+:root{
+    --tipo-fuente1: 'Lato', sans-serif;
+    --tipo-fuente2: 'Noto serif', serif;
+    --color-1: rgb(255,255,255); /*color texto sobre fondos oscuros y enlaces en footer*/
+    --color-2: rgb(191,12,240);/*color contraste, estado y hoover menu principal y menu migas, enlaces dentro del texto y fondo hoover enlace categorias*/
+    --color-3: rgb(0,59,74);/*color de texto, fondo footer, enlaces menu principal, hoover de enlace dentro del texto, menu migas de pan color enlaces*/
+    --color-4: rgb(247,247,247);/*fondo del body*/
+    --color-5: rgb(229,225,254); /*color contraste claro, estado y hover footer*/
+  }
+  
+/* VOY A USAR PARA BREAKPOINTS LOS CRITERIOS DE LA PÁGINA WEB TOMADA COMO REFERENCIA QUE ES WWW.ANSITEC.COM QUE SERÁN, MÓVILES HASTA 600PX, DESDE 600PX A 996PX TABLET Y A PARTIR DE 997 RESTO DE DISPOSITIVOS*/
+
+body {
+    background-color: var(--color-4);
+    margin:0;
+    padding: 0;}
+h1{
+    text-align:center;
+    margin-bottom: 25px;
+    font-family: var(--tipo-fuente2);
+    color:var(--color-3);
+    font-size: 2rem;
+    font-weight: 700;}
+h2{
+    font-family: var(--tipo-fuente2);
+    color:var(--color-3);}
+h3{
+    font-family: var(--tipo-fuente2);
+    color:var(--color-3);}
+h3 a{
+    text-decoration: none;
+    color:var(--color-3);}
+h3 a:hover{color:var(--color-2);}
+article{
+    margin: 10px 15px;
+    background-color: var(--color-1); }
+header {
+    background-color: var(--color-1);
+    color: var(--color-3);
+    font-family: var(--tipo-fuente1);
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+figcaption{
+    font-size: 0.7rem;
+    text-align: right;}
+blockquote {
+    width: 90%;
+    margin: 1rem auto;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-2);
+}
+span {
+    color:var(--color-3);
+    font-weight: 700;}
+p a{
+        color:var(--color-2);
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-thickness: 1px;}
+p a:hover{color:var(--color-3);}
+p a:active{color:var(--color-3);}
+  
+
+/*  ESTILOS PARA EL MENÚ DE NAVEGACIÓN  */
+
+nav ul {    list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;}
+nav ul li {margin-right: 20px;}
+nav a, h2 a{    text-decoration: none;
+                color:var(--color-3);}
+nav a:hover, h2 a:hover{color: var(--color-2);}
+nav a:active{color: var(--color-2);}
+/*por debajo de 350px, por culpa de la posición de las opciones de menú, no se respetaba adecuadamente el formato (te puse mensaje por esto) así que se me ha ocurrido cambiar la orientación del menú por debajo de 350px y así me aguanta el formato bien hasta los 250px, ya por debajo de esto supongo podría hacerse un menú diferente, pero ya...*/
+
+@media (max-width: 360px) {
+    nav ul{flex-direction: column};
+}
+
+
+/* ESTILOS PARA EL FOOTER */
+
+footer{
+    background-color: var(--color-3);
+    color: var(--color-1);
+    font-family: var(--tipo-fuente1);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 2rem;
+    text-align: center;
+}
+div.footer-division{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap:10px;
+}
+footer a{
+    text-decoration: none;
+    color:var(--color-1);
+    font-size: 1.2rem; 
+}
+footer a:hover{color: var(--color-5);}
+footer a:active{color: var(--color-5);}
+
+.footer-division > div:last-child a {
+    display: block;
+}
+@media screen and (min-width: 992px) {
+    div.footer-division {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    /*un gran descubrimiento aprender a usar el símbolo > para hacer referencia solo
+    a los hijos directos de .footer-division, desconocía esta forma de uso*/
+    .footer-division > div:nth-child(1) {grid-area: 1 / 1 / 2 / 2; text-align: left;}
+    .footer-division > div:nth-child(3) {grid-area: 1 / 2 / 2 / 3; text-align: right;}
+    .footer-division > div:nth-child(2) {grid-area: 2 / 1 / 3 / 2; text-align: left;}
+    .footer-division > div:nth-child(4) {grid-area: 2 / 2 / 3 / 3; text-align: right;} 
+    .footer-division > div:last-child a {
+        display: inline-block;
+        margin-right: 10px;}
+} 
+
+
+/***************************************************/
+/******** ESTILOS PARA LA PAGINA INDEX *************/
+/***************************************************/
+
+/*DISEÑO PARA MÓVIL*/
+
+#seccion1 {
+    position: relative;
+    overflow: hidden;
+}
+#seccion1 figure {
+    position: relative;
+    margin: 0;
+}
+#seccion1 img {
+    width: 100%;
+    height: auto;
+}
+#seccion1 figcaption {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%); 
+    color: var(--color-3);
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: left;
+}
+.seccion2{
+    font-style: var(--tipo-fuente1);
+    font-size: 1rem;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100%; 
+    margin: 0 auto;
+}
+.seccion2-aviso {font-size: 0.9rem;}
+.seccion2-check label {font-size: 0.9rem;}
+.seccion2-texto,
+.seccion2-form,
+.seccion3-nutricion,
+.seccion3-bienstar,
+.seccion3-ejercicio,
+.seccion3-saludable,
+.seccion3-boton {
+    margin-left: 10px;
+    margin-right: 10px;}
+.seccion3-boton{
+    margin-bottom: 20px;
+}
+.seccion2-form label,
+.seccion2-form input {
+    height: 30px;
+    padding-left:10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border:transparent;
+    border-radius: 5px;
+    display: block;
+    width: 80%;
+}
+#div-aviso{
+    display: grid;
+    grid-template-columns: 15px 300px;
+    align-items: center;
+    font-size: 0.8rem;}
+#boton{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-style: var(--tipo-fuente1);
+    font-size: 0.8rem;
+    font-weight: 400;
+    background-color: var(--color-3);
+    color:var(--color-1);
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 240px;
+}
+#boton:hover{background-color: var(--color-2);}
+.seccion3{
+    font-style: var(--tipo-fuente1);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 15px;
+    background-color: var(--color-5);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.seccion3-boton a{
+    font-style: var(--tipo-fuente1);
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color:var(--color-1);
+    background-color: var(--color-3);
+    border-radius: 5px;
+    padding: 5px;
+}
+.seccion3-boton a:hover{background-color: var(--color-2);}
+.informacion{font-size: 0.8rem;}
+
+/* A PARTIR DE AQUÍ CAMBIOS EN INDEX PARA TABLET Y ORDENADOR */
+
+@media screen and (min-width: 600px) and (max-width: 996px) {
+    .seccion3{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .seccion3-1{
+        display: grid;
+        grid-template-columns: 30% 70%;}
+        
+    .seccion3-2{
+        display: grid;
+        grid-template-columns: 70% 30%;}
+    .seccion3-2 figure{grid-area: 1 / 2 / 1 / 2; text-align: left;}
+    .seccion3-2-conjunto{grid-area: 1 / 1 / 1 / 1; text-align: left;}
+    .seccion3-3{
+        display: grid;
+        grid-template-columns: 30% 70%;}
+    .seccion3-4{
+        display: grid;
+        grid-template-columns: 70% 30%;}
+    .seccion3-4 figure{grid-area: 1 / 2 / 1 / 2; text-align: left;}
+    .seccion3-4-conjunto{grid-area: 1 / 1 / 1 / 1; text-align: left;}
+    .girada-i,
+    .seccion3-1 figcaption,
+    .seccion3-3 figcaption {transform: rotate(-2deg);}
+    .girada-d,
+    .seccion3-2 figcaption,
+    .seccion3-4 figcaption {transform: rotate(2deg);}
+}
+@media screen and (min-width: 997px) {
+   
+    .main-index {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;}
+    #seccion1 figcaption {
+        font-size: 3rem;
+        font-weight: 900;}
+    .seccion2{
+        width: 990px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);}
+   .seccion2-texto p,
+   .seccion3 p{ font-size: 1.2rem;}
+    .seccion2-texto {   grid-column: 1; 
+                        grid-row: 1;}
+    .seccion2-form {    grid-column: 2; 
+                        grid-row: 1;}
+    .seccion3{
+        width: 990px;
+        margin: 0 auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .seccion3-1{
+        padding:10px 20px;
+        display: grid;
+        grid-template-columns: 30% 70%;}
+                            
+    .seccion3-2{
+        padding:10px 20px;
+        display: grid;
+        display: grid;
+        grid-template-columns: 70% 30%;}
+    .seccion3-2 figure{grid-area: 1 / 2 / 1 / 2; text-align: left;}
+    .seccion3-2-conjunto{grid-area: 1 / 1 / 1 / 1; text-align: left;}
+    .seccion3-3{
+        padding:10px 20px;
+        display: grid;
+        display: grid;
+        grid-template-columns: 30% 70%;}
+    .seccion3-4{
+        padding:10px 20px;
+        display: grid;
+        display: grid;
+        grid-template-columns: 70% 30%;}
+    .seccion3-4 figure{grid-area: 1 / 2 / 1 / 2; text-align: left;}
+    .seccion3-4-conjunto{grid-area: 1 / 1 / 1 / 1; text-align: left;}
+    .girada-i,
+    .seccion3-1 figcaption,
+    .seccion3-3 figcaption {transform: rotate(-2deg);}
+    .girada-d,
+    .seccion3-2 figcaption,
+    .seccion3-4 figcaption {transform: rotate(2deg);}
+}
+
+/***************************************************/
+/******** ESTILOS PARA LA PAGINA BLOG **************/
+/***************************************************/
+
+/* DISEÑO PARA MÓVIL */
+
+
+.blog-entrada1,.blog-entrada2,.blog-entrada3,
+.blog-entrada4,.blog-entrada5,.blog-entrada6,
+.blog-entrada7{
+    margin:15px;
+    position:relative;}
+.figure-blog-1,.figure-blog-2,.figure-blog-3,
+.figure-blog-4,.figure-blog-5,.figure-blog-6,
+.figure-blog-7{  
+    margin: auto;
+    position: relative;}
+
+.figure-blog-1 > figcaption,.figure-blog-2 > figcaption,
+.figure-blog-3 > figcaption,.figure-blog-4 > figcaption,
+.figure-blog-5 > figcaption,.figure-blog-6 > figcaption,
+.figure-blog-7 > figcaption {
+    background-color: rgba(229,225,254,0.5);
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+.blog-entrada1 > a,.blog-entrada2 > a,.blog-entrada3 > a,
+.blog-entrada4 > a,.blog-entrada5 > a,.blog-entrada6 > a,
+.blog-entrada7 > a{
+    text-decoration: none;
+    line-height: 32px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--color-3);
+    color:var(--color-1);
+    height: 35px;
+    max-width:max-content;
+    padding: 3px 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+.blog-entrada1 > a:hover,.blog-entrada2 > a:hover,.blog-entrada3 > a:hover,
+.blog-entrada4 > a:hover,.blog-entrada5 > a:hover,.blog-entrada6 > a:hover,
+.blog-entrada7 > a:hover{background-color: var(--color-2);}
+.blog-entrada1 div, .blog-entrada2 div, .blog-entrada3 div,
+.blog-entrada4 div, .blog-entrada5 div, .blog-entrada6 div,
+.blog-entrada7 div, .blog-entrada1 h2, .blog-entrada2 h2,
+.blog-entrada3 h2, .blog-entrada4 h2, .blog-entrada5 h2,
+.blog-entrada6 h2, .blog-entrada7 h2 {padding: 0px 25px;}
+/****************
+haber aprendido a usar el selector > me está permitiendo hacer más limpio el 
+archivo CSS evitando usar un montón de clases, p.e. aquí abajo, para el <p> que
+es hijo directo del div.blog-entrada le pongo menos tamaño de letra porque corresponde
+con el autor de la entrada, sin embargo para aquellos párrafos que están dentro del div
+pero que no son hijos directos le doy otro tamaño, tendría que haber puesto una clase
+para cada <p>*************/
+.blog-entrada1 p,.blog-entrada2 p,.blog-entrada3 p,.blog-entrada4 p,
+.blog-entrada5 p,.blog-entrada6 p,.blog-entrada7 p{font-size: 1.1rem;}
+.blog-entrada1 > p,.blog-entrada2 > p,.blog-entrada3 > p,.blog-entrada4 > p,
+.blog-entrada5 > p,.blog-entrada6 > p,.blog-entrada7 > p{   font-size: 0.8rem;
+                                                            padding-left: 35px;}
+/****************/ 
+.seccion-blog {
+    display: grid;
+    grid-template-columns: 1fr;}
+
+.blog-paginas { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;}
+.blog-paginas a {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 40px;
+    margin: 0 7px;
+    border: 2px solid var(--color-3);
+    color: var(--color-3);
+    text-decoration: none;
+}
+.blog-paginas a.actual, 
+.blog-paginas a:hover { 
+    background-color: var(--color-2);
+    color: var(--color-1);
+    border: 2px solid var(--color-2);
+}
+
+
+/* A PARTIR DE AQUÍ CAMBIOS EN BLOG PARA TABLET Y ORDENADOR */
+
+@media screen and (min-width: 600px) and (max-width: 996px) {
+    .seccion-blog{grid-template-columns: repeat(2, 1fr);}
+    .figure-blog-1 > a,.figure-blog-2 > a,.figure-blog-3 > a,
+    .figure-blog-4 > a,.figure-blog-5 > a,.figure-blog-6 > a,
+    .figure-blog-7 > a{
+        font-size: 0.8rem;
+        height: 25px;
+        line-height: 22px;
+    }
+}
+@media screen and (min-width: 997px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+   
+    .seccion-blog{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .blog-entrada1 {    grid-column: span 2; 
+                        grid-row: 1;}
+    .blog-entrada2 {    grid-column: 3; 
+                        grid-row: 1;}
+    .blog-entrada3 {    grid-column: 4; 
+                        grid-row: 1;}
+    .blog-entrada4 {    grid-column: 1; 
+                        grid-row: 2;}
+    .blog-entrada5 {    grid-column: 2; 
+                        grid-row: 2;}
+    .blog-entrada6 {    grid-column: 3; 
+                        grid-row: 2;}
+    .blog-entrada7 {    grid-column: 4; 
+                        grid-row: 2;}
+    .blog-entrada1 div, .blog-entrada2 div, .blog-entrada3 div,
+    .blog-entrada4 div, .blog-entrada5 div, .blog-entrada6 div,
+    .blog-entrada7 div, .blog-entrada1 h2, .blog-entrada2 h2,
+    .blog-entrada3 h2, .blog-entrada4 h2, .blog-entrada5 h2,
+    .blog-entrada6 h2, .blog-entrada7 h2 {padding: 0px 10px;}
+    .blog-entrada1 h2, .blog-entrada2 h2,.blog-entrada3 h2, 
+    .blog-entrada4 h2, .blog-entrada5 h2,.blog-entrada6 h2,
+    .blog-entrada7 h2{font-size: 1.2rem;}
+    .blog-entrada1 p,.blog-entrada2 p,.blog-entrada3 p,.blog-entrada4 p,
+    .blog-entrada5 p,.blog-entrada6 p,.blog-entrada7 p{font-size: 1.1rem;}
+    .blog-entrada1 > p,.blog-entrada2 > p,.blog-entrada3 > p,.blog-entrada4 > p,
+    .blog-entrada5 > p,.blog-entrada6 > p,.blog-entrada7 > p{
+        font-size: 0.7rem;
+        padding-left: 10px;}
+    .figure-blog-1 > a,.figure-blog-2 > a,.figure-blog-3 > a,
+    .figure-blog-4 > a,.figure-blog-5 > a,.figure-blog-6 > a,
+    .figure-blog-7 > a{
+        line-height: 25px;
+        font-size: 0.8rem;
+        height: 30px;
+        max-width:max-content;}
+}
+
+/***************************************************/
+/******** ESTILOS PARA LA PAGINA VIDEOS ************/
+/***************************************************/
+
+/* DISEÑO PARA MÓVIL */
+
+.main-videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;}
+.figure-video {  
+    max-width: 100%;
+    height: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: var(--color-1);}
+.figure-video > div:last-child,
+.figure-video h2 {
+    padding: 0 15px;
+}
+.video-1,.video-2,.video-3,
+.video-4,.video-5,.video-6 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;}
+.video-1-item,.video-2-item,.video-3-item,
+.video-4-item,.video-5-item,.video-6-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;}
+.video-1::before,.video-2::before,.video-3::before,
+.video-4::before,.video-5::before,.video-6::before{
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+
+/* A PARTIR DE AQUÍ CAMBIOS EN VIDEOS PARA TABLET Y ORDENADOR */
+
+@media screen and (min-width: 600px) and (max-width: 996px) {
+    .main-videos{grid-template-columns: repeat(2, 1fr);}
+}
+@media screen and (min-width: 997px) {
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;}
+    footer {
+        margin-top: auto;}
+    main {
+        max-width: 1440px;
+        margin: 0 auto;}
+   
+    .main-videos{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);}
+}
+
+
+/***************************************************/
+/******** ESTILOS PARA LA PAGINA ENTRADA ***********/
+/***************************************************/
+
+/*DISEÑO PARA MÓVIL*/
+/*uso los mismos blog-entrada-n para los article que en la pagina de blog poruqe el comportamiento con el enlace a la categoría fitness-nutrición... es el mismo diseño*/
+aside{display: none;}
+.entrada{
+    margin:15px;
+    color:var(--color-3);
+    font-size: 0.9rem;
+    font-weight: 700;}
+.seccion-consejos{
+    display: grid;
+    grid-template-columns: 1fr ;
+    color:var(--color-3);
+    font-size: 0.9rem;
+    background-color: var(--color-1);
+    margin-left:15px;
+    margin-right: 15px;
+    padding: 0px 15px;}
+.imagen-entrada{
+    padding-top: 15px;
+    width: 100%;
+    height: auto;}
+.texto-entrada{
+    width: 100%;
+    height: auto;
+    background-color: rgb(239, 197, 241);}
+.autor{
+    font-size: 0.7rem;
+    padding-left: 10px;}
+.desc-entrada{
+    font-size:1.1rem;
+    font-weight: 700;}
+
+.figure-entrada p {font-size: 0.8rem;}
+.figure-entrada{
+    position: relative;
+    margin:auto;}
+
+.figure-entrada figcaption{
+    font-size: 1rem;
+    text-align: left;
+    padding: 5px 15px;}
+.figure-entrada > a{
+    text-decoration: none;
+    line-height: 32px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--color-3);
+    color:var(--color-1);
+    height: 35px;
+    max-width:max-content;
+    padding: 3px 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    left: 3%;}
+.figure-entrada > a:hover { 
+    background-color: var(--color-2);
+    color: var(--color-1);
+    border: 2px solid var(--color-2);} 
+.h2-seccion{
+    margin-top: 50px;
+    margin-left: 15px;}
+.entrada-categorias, 
+.entrada-categorias-aside{
+    display: flex;
+    justify-content: left;
+    margin-bottom: 25px;
+    padding-left: 15px;}
+.entrada-categorias a,
+.entrada-categorias-aside a{
+    font-size: 0.6rem;
+    max-width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 7px;
+    border: 2px solid var(--color-3);
+    color: var(--color-3);
+    text-decoration: none;
+    padding: 0 5px;}
+.entrada-categorias a:hover,
+.entrada-categorias-aside a:hover{
+    background-color: var(--color-2);
+    color: var(--color-1);
+    border: 2px solid var(--color-1);}
+
+/* A PARTIR DE AQUÍ CAMBIOS EN ENTRADA PARA TABLET Y ORDENADOR */
+
+@media screen and (min-width: 600px) and (max-width: 996px) {
+    .seccion-recientes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);}
+    .entrada-categorias a{
+        font-size : 0.8rem;
+        height: 35px;
+        padding: 0 10px;
+        line-height: 35px;}
+    .figure-entrada > a{
+        font-size: 0.8rem;
+        height: 25px;
+        line-height: 22px;}
+    .blog-entrada1 a, .blog-entrada2 a,.blog-entrada3 a {font-size: 0.8rem;}
+    
+}
+@media screen and (min-width: 997px) {
+    /* para poner el panel lateral he visto hay que usar la etiqueta <aside> y no he visto otra forma mas que tenerla oculta hasta el momento de esta resolución, al final creo que se duplica en el html código a cambio de no añadir más código en el CSS, pero no veo otra forma de hacer esto con los conocimientos que tengo ahora*/
+    aside{display: block;}
+   
+    .main-entrada {
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    .seccion-recientes, .h2-seccion,
+    .entrada-categorias{display: none;}
+    .seccion-consejos{
+        padding-bottom: 50px;
+        font-size: 1.1rem;}
+    .h2-seccion-aside{
+        font-size: 1.2rem;
+        padding-left: 20px;}
+    .figure-entrada > a{
+        font-size: 0.9rem;
+        height: 25px;
+        line-height: 22px;}
+    /* esta es la manera que se me ha ocurrido para que quepan los cuatro opciones de menú hacer un flex-wrap*/
+    .entrada-categorias-aside { 
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 8px;}
+}
