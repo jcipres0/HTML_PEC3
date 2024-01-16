@@ -422,10 +422,10 @@ para cada <p>*************/
 
 @media screen and (min-width: 600px) and (max-width: 996px) {
     .seccion-blog{grid-template-columns: repeat(2, 1fr);}
-    .figure-blog-1 > a,.figure-blog-2 > a,.figure-blog-3 > a,
-    .figure-blog-4 > a,.figure-blog-5 > a,.figure-blog-6 > a,
-    .figure-blog-7 > a{
-        font-size: 0.8rem;
+    .blog-entrada1 > h2,.blog-entrada2 > h2,.blog-entrada3 > h2,
+    .blog-entrada4 > h2,.blog-entrada5 > h2,.blog-entrada6 > h2,
+    .blog-entrada7 > h2{
+        font-size: 1.2rem;
         height: 25px;
         line-height: 22px;
     }
@@ -557,7 +557,7 @@ aside{display: none;}
     display: grid;
     grid-template-columns: 1fr ;
     color:var(--color-3);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     background-color: var(--color-1);
     margin-left:15px;
     margin-right: 15px;
@@ -636,6 +636,7 @@ aside{display: none;}
     .seccion-recientes{
         display: grid;
         grid-template-columns: repeat(3, 1fr);}
+    .seccion-consejos {font-size: 1.2rem;}
     .entrada-categorias a{
         font-size : 0.8rem;
         height: 35px;
@@ -645,7 +646,7 @@ aside{display: none;}
         font-size: 0.8rem;
         height: 25px;
         line-height: 22px;}
-    .blog-entrada1 a, .blog-entrada2 a,.blog-entrada3 a {font-size: 0.8rem;}
+    /* .blog-entrada1 h2, .blog-entrada2 h2,.blog-entrada3 h2 {font-size: 0.8rem;} */
     
 }
 @media screen and (min-width: 997px) {
