@@ -9,11 +9,13 @@
   }
   
 /* VOY A USAR PARA BREAKPOINTS LOS CRITERIOS DE LA PÁGINA WEB TOMADA COMO REFERENCIA QUE ES WWW.ANSITEC.COM QUE SERÁN, MÓVILES HASTA 600PX, DESDE 600PX A 996PX TABLET Y A PARTIR DE 997 RESTO DE DISPOSITIVOS*/
+/*PARA LOS DISEÑOS ORDENADOR HE PUESTO UN MAX-WIDTH DE 1440PX PORQUE ME PARECE QUE A PARTIR DE ESTA RESOLUCIÓN SE DEFORMAN LAS CAJAS MUCHO*/
 
 body {
     background-color: var(--color-4);
     margin:0;
-    padding: 0;}
+    padding: 0;
+    font-family: var(--tipo-fuente1);}
 h1{
     text-align:center;
     margin-bottom: 25px;
@@ -142,6 +144,7 @@ footer a:active{color: var(--color-5);}
 #seccion1 {
     position: relative;
     overflow: hidden;
+    width: 100vw;
 }
 #seccion1 figure {
     position: relative;
@@ -149,8 +152,10 @@ footer a:active{color: var(--color-5);}
 }
 #seccion1 img {
     width: 100%;
-    height: auto;
-}
+    display: flex;
+    align-items: center;
+    display: block;    
+} 
 #seccion1 figcaption {
     position: absolute;
     top: 40%;
@@ -218,7 +223,7 @@ footer a:active{color: var(--color-5);}
     font-style: var(--tipo-fuente1);
     font-size: 1rem;
     font-weight: 400;
-    margin: 15px;
+    /* margin: 15px; */
     background-color: var(--color-5);
     display: grid;
     grid-template-columns: 1fr;
@@ -268,12 +273,12 @@ footer a:active{color: var(--color-5);}
     .seccion3-4 figcaption {transform: rotate(2deg);}
 }
 @media screen and (min-width: 997px) {
-   
-    .main-index {
+    #seccion1 figure {
+        height: 500px;
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        max-width: 1200px;
-        margin: 0 auto;}
+        align-items: center;
+    }
     #seccion1 figcaption {
         font-size: 3rem;
         font-weight: 900;}
@@ -289,17 +294,21 @@ footer a:active{color: var(--color-5);}
     .seccion2-form {    grid-column: 2; 
                         grid-row: 1;}
     .seccion3{
-        width: 990px;
-        margin: 0 auto;
+        /* width: 990px; */
+        /* margin: 0 auto; */
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
     }
     .seccion3-1{
+        margin: 0 auto;
+        width: 990px;
         padding:10px 20px;
         display: grid;
         grid-template-columns: 30% 70%;}
                             
     .seccion3-2{
+        margin: 0 auto;
+        width: 990px;
         padding:10px 20px;
         display: grid;
         display: grid;
@@ -307,11 +316,15 @@ footer a:active{color: var(--color-5);}
     .seccion3-2 figure{grid-area: 1 / 2 / 1 / 2; text-align: left;}
     .seccion3-2-conjunto{grid-area: 1 / 1 / 1 / 1; text-align: left;}
     .seccion3-3{
+        margin: 0 auto;
+        width: 990px;
         padding:10px 20px;
         display: grid;
         display: grid;
         grid-template-columns: 30% 70%;}
     .seccion3-4{
+        margin: 0 auto;
+        width: 990px;
         padding:10px 20px;
         display: grid;
         display: grid;
@@ -431,12 +444,9 @@ para cada <p>*************/
     }
 }
 @media screen and (min-width: 997px) {
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-   
     .seccion-blog{
+        max-width: 1440px;
+        margin: 0 auto;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
@@ -531,11 +541,13 @@ para cada <p>*************/
         flex-direction: column;}
     footer {
         margin-top: auto;}
-    main {
+/*     main {
         max-width: 1440px;
         margin: 0 auto;}
-   
+ */   
     .main-videos{
+        max-width: 1440px;
+        margin: 0 auto;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);}
 }
@@ -654,6 +666,8 @@ aside{display: none;}
     aside{display: block;}
    
     .main-entrada {
+        max-width: 1440px;
+        margin: 0 auto;
         display: grid;
         grid-template-columns: 70% 30%;
     }
